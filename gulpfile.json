@@ -1,0 +1,75 @@
+{
+  "build": {
+    "path": {
+      "build-name": "angulo-admin",
+      "build-dir": "build/angulo-admin",
+      "src-dir": "src/module"
+    },
+    "clean": true,
+    "default": false,
+    "task-dir": "gulp_tasks/module",
+    "task": {
+
+    }
+  },
+  "build-example": {
+    "path": {
+      "src-dir": "src/example",
+      "build-name": "angulo-admin-example",
+      "build-dir": "build/example",
+      "lib": [
+        "core-js/client/shim.min.js",
+        "systemjs/dist/system-polyfills.js",
+        "systemjs/dist/system.src.js",
+        "reflect-metadata/Reflect.js",
+        "rxjs/**/*.js",
+        "zone.js/dist/**",
+        "@angular/**/bundles/**"
+      ]
+    },
+    "after": "build",
+    "clean": true,
+    "task-dir": "gulp_tasks/example",
+    "default": true,
+    "task": {
+      "lint": true,
+      "compile": ["lint"],
+      "resource": true,
+      "lib": true
+    }
+  },
+  "watch": {
+    "path": {
+      "src-dir": "src/example"
+    },
+    "clean": false,
+    "task-dir": "gulp_tasks/example",
+    "task": {
+      "watch": true
+    }
+  },
+  "resource": {
+    "path": {
+      "src-dir": "src/example",
+      "build-name": "angulo-admin-example",
+      "build-dir": "build/example"
+    },
+    "clean": false,
+    "task-dir": "gulp_tasks/example",
+    "task": {
+      "resource": true
+    }
+  },
+  "compile": {
+    "path": {
+      "src-dir": "src/example",
+      "build-name": "angulo-admin-example",
+      "build-dir": "build/example"
+    },
+    "clean": false,
+    "task-dir": "gulp_tasks/example",
+    "task": {
+      "compile": true
+    }
+  }
+}
